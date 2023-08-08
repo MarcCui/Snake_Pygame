@@ -66,7 +66,6 @@ class Game:
         #variables del joc
         self.lletraTxt = pygame.font.SysFont('Arial',13)
         self.puntuacio = 0
-        self.txtPuntuacio = self.lletraTxt.render(f'Puntuació: {self.puntuacio}', False,(255, 255, 255))
         self.botons = []
         self.archiu = open('scripts/Menu.txt', 'r')
         self.compMenu = self.archiu.read()
