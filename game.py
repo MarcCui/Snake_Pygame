@@ -68,7 +68,7 @@ class Game:
         self.lletraTxt = pygame.font.SysFont('Arial',13)
         self.puntuacio = 0
         self.botons = []
-        self.archiu = open('scripts/Menu.txt', 'r')
+        self.archiu = open('data/archius/Menu.txt', 'r')
         self.compMenu = self.archiu.read()
         self.archiu.close()
         self.antirepetir= False
@@ -93,11 +93,11 @@ class Game:
         self.finestra.blit(self.assets['perdut'],(384/2-140, 30))
 
         pasar = False
-        archiu = open('scripts/PuntMax.txt', 'r') #Llegim la puntuació maxima i l'asignem a una variable.
+        archiu = open('data/archius/PuntMax.txt', 'r') #Llegim la puntuació maxima i l'asignem a una variable.
         puntMax = int(archiu.read()) #transformem el contingut del archiu en un int
         archiu.close() 
         if puntMax <= self.puntuacio: #comprobem si la puntuació obtinguda és menor a la puntuació maxima
-            archiu = open('scripts/PuntMax.txt', 'w')
+            archiu = open('data/archius/PuntMax.txt', 'w')
             archiu.write(str(self.puntuacio))
             archiu.close()
             Felicitats= True
@@ -123,18 +123,18 @@ class Game:
             self.direccions_posicions_serp = [self.direccio] * self.tamany_serp #la direcció per defecte dos cops.
             self.viu = True
             self.puntuacio = 0
-            archiu = open('scripts/menu.txt', 'w')
+            archiu = open('data/archius/menu.txt', 'w')
             archiu.write('True')
             archiu.close()
 
 
     def botoJugar():
-        archiu = open('scripts/menu.txt', 'w')
+        archiu = open('data/archius/menu.txt', 'w')
         archiu.write('False')
         archiu.close()
     
     def botoSortir():
-        archiu = open('scripts/menu.txt', 'w')
+        archiu = open('data/archius/menu.txt', 'w')
         archiu.write('True')
         archiu.close()
         pygame.quit()
@@ -149,7 +149,7 @@ class Game:
             
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    archiu = open('scripts/menu.txt', 'w')
+                    archiu = open('data/archius/menu.txt', 'w')
                     archiu.write('True')
                     archiu.close()
                     pygame.quit()
@@ -169,7 +169,7 @@ class Game:
                     pass
 
 
-            self.archiu = open('scripts/Menu.txt', 'r')
+            self.archiu = open('data/archius/Menu.txt', 'r')
             self.compMenu = self.archiu.read()
             self.archiu.close()
 
