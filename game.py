@@ -92,7 +92,6 @@ class Joc:
         self.assets['perdut'].set_colorkey(self.assets['perdut'].get_at((0,0)))
         self.finestra.blit(self.assets['perdut'],(384/2-140, 30))
 
-        pasar = False
         archiu = open('data/archius/PuntMax.txt', 'r') #Llegim la puntuació maxima i l'asignem a una variable.
         puntMax = int(archiu.read()) #transformem el contingut del archiu en un int
         archiu.close() 
@@ -112,9 +111,6 @@ class Joc:
             self.pantalla.blit(txtFelicitats, (26, 142))
 
         if pygame.mouse.get_pressed(num_buttons=3)[0]:
-            pasar = True
-
-        if pasar:
             self.pos = [4, 5]
             self.direccio = 'dreta'
             self.tamany_serp = self.tamany_serp_inicial
