@@ -196,7 +196,6 @@ class Game:
                 else:
                     self.viu = True
                 temps_actual = time.time()
-                print(self.viu)
 
                 if  temps_actual > self.control_temps + self.temps_serp: 
                     if self.direccio == 'dreta':

@@ -55,7 +55,6 @@ class boto():
     def proces(self):
         mpos = pygame.mouse.get_pos() #conseguim la posició del ratoli
         mpos = (int(mpos[0]//2), int(mpos[1]//2))
-        print(mpos)
 
         self.surfaceBoto.fill(self.colorsBoto['normal']) #cambien el color del rectangle
         if self.coliderBoto.collidepoint(mpos): #comprobem si el ratolí està a sobre del botó
