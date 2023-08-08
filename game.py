@@ -101,7 +101,6 @@ class Game:
             archiu.write(str(self.puntuacio))
             archiu.close()
             Felicitats= True
-            self.antirepetir = True
         else:
             Felicitats = False
             
