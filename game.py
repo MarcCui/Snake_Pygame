@@ -26,6 +26,7 @@ class Game:
         self.assets = {
             'jugador': cargar_imatges('player'),
             'poma' : cargar_imatge('others/apple.png'),
+            'mapa' : cargar_imatge('map/map.png'),
             'fons' : cargar_imatge('menu/fons_menu.png'),
             'titol' : pygame.transform.scale(cargar_imatge('menu/titol.png'),(280,140)),
             'perdut' : pygame.transform.scale(cargar_imatge('menu/perdre.png'),(280,140))
@@ -78,7 +79,7 @@ class Game:
         
         self.assets['fons'].set_alpha(100)
         self.finestra.blit(pygame.transform.scale(self.pantalla, self.finestra.get_size()), (0,0))
-        self.pantalla.blit(pygame.image.load('data\images\map\map.png'),(0,0))
+        self.pantalla.blit(self.assets['mapa'],(0,0))
         self.pantalla.blit(self.assets['fons'],(0,0))
         self.finestra.blit(self.assets['titol'],(384/2-140, 30))
 
@@ -86,7 +87,7 @@ class Game:
 
         self.assets['fons'].set_alpha(100)
         self.finestra.blit(pygame.transform.scale(self.pantalla, self.finestra.get_size()), (0,0))
-        self.pantalla.blit(pygame.image.load('data\images\map\map.png'),(0,0))
+        self.pantalla.blit(self.assets['mapa'],(0,0))
         self.pantalla.blit(self.assets['fons'],(0,0))
         self.assets['perdut'].set_colorkey(self.assets['perdut'].get_at((0,0)))
         self.finestra.blit(self.assets['perdut'],(384/2-140, 30))
@@ -278,7 +279,7 @@ class Game:
                                 surface_serp = self.llista_imatges_gir[19]
                         self.pantalla.blit(surface_serp, (self.posicions_serp[i+1][0] * 16, self.posicions_serp[i+1][1] * 16))
                     self.finestra.blit(pygame.transform.scale(self.pantalla, self.finestra.get_size()), (0,0))
-                    self.pantalla.blit(pygame.image.load('data\images\map\map.png'),(0,0))
+                    self.pantalla.blit(self.assets['mapa'],(0,0))
                     self.pantalla.blit(self.assets['poma'], (self.posicio_poma[0]*16,self.posicio_poma[1]*16))
                     self.txtPuntuacio = self.lletraTxt.render(f'Puntuació: {self.puntuacio}', True,(255, 255, 255))
                     self.pantalla.blit(self.txtPuntuacio, (16, 16))
