@@ -3,7 +3,7 @@ import sys
 import time #això no se si es bona solució, hi ha el clock altre, pero es per quee s mogui per defecte
 from scripts.utils import cargar_imatge, cargar_imatges, generar_poma, boto
 
-class Game:
+class Joc:
 
     def __init__(self):
         
@@ -139,10 +139,10 @@ class Game:
         pygame.quit()
         sys.exit()
 
-    def run(self):
+    def Jugar(self):
         #creem tots els botons que utilitzarem:
-        self.botons.append(boto(self, (26, 104), 140, 32, 'Jugar', Game.botoJugar))
-        self.botons.append(boto(self, (26, 138), 140, 32, 'Sortir', Game.botoSortir))
+        self.botons.append(boto(self, (26, 104), 140, 32, 'Jugar', Joc.botoJugar))
+        self.botons.append(boto(self, (26, 138), 140, 32, 'Sortir', Joc.botoSortir))
 
         while True:
             
@@ -173,9 +173,9 @@ class Game:
             self.archiu.close()
 
             if self.compMenu == 'True':
-                Game.menu(self)
+                Joc.menu(self)
             elif self.viu == False:
-                Game.perdre(self)
+                Joc.perdre(self)
             else:
                 #L'encarregat de ferte perdre
                 if self.pos[0] < 1:
@@ -288,4 +288,4 @@ class Game:
 
 
 
-Game().run()
+Joc().Jugar()
