@@ -26,15 +26,13 @@ def generar_poma():
 
 
 #Codi per fer el boto
-lletra = pygame.font.SysFont('Arial', 20) #Seleccionem la font dels textos i el tamany d'aquest
-
-
 
 class boto():
     def __init__(self, Game, pos, amplada, altura, text='Boto', funcio=None):
         self.pos = pos #posició
         self.amplada = amplada #amplada i altura del botó
         self.altura = altura
+        lletra = pygame.font.SysFont('Arial', 20) #Seleccionem la font dels textos i el tamany d'aquest
         self.text = lletra.render(text, True, (255,255,255)) #creació del text
         self.funcio = funcio
         self.Game = Game
