@@ -74,7 +74,7 @@ class Joc:
         self.antirepetir= False
     
     def menu(self):
-        for i in self.botons[0:2]:
+        for i in self.botons:
             i.proces()
         
         self.assets['fons'].set_alpha(100)
@@ -129,9 +129,6 @@ class Joc:
         archiu.close()
     
     def botoSortir():
-        archiu = open('data/archius/menu.txt', 'w')
-        archiu.write('True')
-        archiu.close()
         pygame.quit()
         sys.exit()
 
